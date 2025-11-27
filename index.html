@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIS Group Project</title>
-</head>
-<body>
-    Kieran Testing
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MIS Strategy Quest – Web Game Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div id="game-shell">
+      <header id="game-header">
+        <div>
+          <div id="game-title">Data Domination</div>
+          <div class="game-subtitle">
+            Web-based Management Information Systems (MIS) decision game
+          </div>
+        </div>
+        <div class="game-subtitle" id="currentSceneIdLabel"></div>
+      </header>
+
+      <section>
+        <div id="role-tag">
+          <span id="icon">◆</span>
+          <span id="playerRole">Chief Information Officer (CIO)</span>
+        </div>
+
+        <div id="scene-header">
+          <div id="scene-title">Scene Title</div>
+          <div id="scene-meta">Quarter · Area</div>
+        </div>
+
+        <div id="employee-block">
+          <div id="employee-avatar">A</div>
+          <div id="employee-info">
+            <div id="employee-name">Employee Name</div>
+            <div id="employee-role">Employee Role</div>
+            <div id="dialog-box">Dialogue and scenario description will appear here.</div>
+          </div>
+        </div>
+
+        <div id="objectives-tagline">
+          Management Information Systems (MIS) learning objectives involved:
+        </div>
+        <div id="objectives-list"></div>
+
+        <div id="choices"></div>
+
+        <div id="end-message"></div>
+      </section>
+
+      <!-- RIGHT: STATS + LOG -->
+      <aside id="right-panel">
+        <section id="stats-block">
+          <h2>Business metrics</h2>
+          <div id="stats-list"></div>
+          <p id="summary-note"></p>
+        </section>
+
+        <section id="log-block">
+          <h2>Decision log</h2>
+          <div id="log-scroll"></div>
+          <div id="footer-bar">
+            <span>Prototype template – replace scenes and metrics with your own design.</span>
+            <button id="resetButton" type="button">↻ Restart</button>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
