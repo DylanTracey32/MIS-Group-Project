@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIS Group Project</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MIS Strategy Quest – Web Game Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="game-header">
+        <div>
+          <div class="game-title">MIS Strategy Quest</div>
+          <div class="game-subtitle">
+            Template – Web-based Management Information Systems (MIS) decision
+            game
+          </div>
+        </div>
+        <div class="game-subtitle" id="currentSceneIdLabel"></div>
+      </header>
+
+      <!-- LEFT: NARRATIVE + CHOICES -->
+      <section class="panel left-panel">
+        <div class="role-tag">
+          <span class="icon">◆</span>
+          <span id="playerRole">Chief Information Officer (CIO)</span>
+        </div>
+
+        <div class="scene-header">
+          <div class="scene-title" id="sceneTitle">Scene Title</div>
+          <div class="scene-meta" id="sceneMeta">Quarter · Area</div>
+        </div>
+
+        <div class="employee-block">
+          <div class="employee-avatar" id="employeeAvatar">A</div>
+          <div class="employee-info">
+            <div class="employee-name" id="employeeName">Employee Name</div>
+            <div class="employee-role" id="employeeRole">Employee Role</div>
+            <div class="dialog-box" id="sceneText">
+              Dialogue and scenario description will appear here.
+            </div>
+          </div>
+        </div>
+
+        <div class="objectives-tagline">
+          Management Information Systems (MIS) learning objectives involved:
+        </div>
+        <div class="objectives-list" id="objectivesList"></div>
+
+        <div class="choices" id="choicesContainer"></div>
+
+        <div class="end-message" id="endMessage" style="display: none"></div>
+      </section>
+
+      <!-- RIGHT: STATS + LOG -->
+      <aside class="panel right-panel">
+        <section class="stats-block">
+          <h2>Business metrics</h2>
+          <div class="stats-list" id="statsList"></div>
+          <p class="summary-note" id="summaryNote"></p>
+        </section>
+
+        <section class="log-block">
+          <h2>Decision log</h2>
+          <div class="log-scroll" id="logContainer"></div>
+          <div class="footer-bar">
+            <span></span>
+            <button id="resetButton" type="button">↻ Restart</button>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>
