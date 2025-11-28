@@ -203,9 +203,9 @@ class GameEngine {
       endMessage
     } = this.elements;
 
-    currentSceneIdLabel.textContent = `Scene: ${scene.id}`;
+    
     sceneTitle.textContent = scene.title;
-    sceneMeta.textContent = `${scene.quarter} · ${scene.area}`;
+    sceneMeta.textContent = `${scene.quarter}`;
 
     employeeAvatar.textContent = scene.employee.initials;
     employeeName.textContent = scene.employee.name;
@@ -272,7 +272,7 @@ class GameEngine {
         choice.endMessage || "This storyline has ended.";
       return;
     }
-
+    
     this.state.currentSceneId = choice.nextSceneId;
     this.renderScene();
   }
