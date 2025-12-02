@@ -443,11 +443,8 @@ class GameEngine {
 const learningObjectives = {
   module1: "Module 1 – Information Systems in Global Business Today",
   module2: "Module 2 – Global E-business and Collaboration",
-  module3: "Module 3 – Information Systems, Organizations and Strategy",
   module4: "Module 4 – Social, Ethical, and Legal Issues in the Digital Firm",
   module5: "Module 5 – IT Infrastructure and Emerging Technologies",
-  module6: "Module 6 – Securing Information Systems",
-  module7: "Module 7 – Enterprise applications",
   module8: "Module 8 – Managing Knowledge and Artificial Intelligence"
 };
 
@@ -465,45 +462,45 @@ const metricDefinitions = [
 // --------------------------------------------------------
 
 const scenes = {
-  // 1) INTRO
+  // 1) INTRO (X)
   intro: new Scene({
     id: "intro",
     title: "Day 1 as Chief Information Officer",
     quarter: "Q1",
     area: "Strategy Zone",
     employee: new Employee({
-      name: "Alex Chen",
+      name: "Alex Chen (Ankylosaurus)",
       role: "IT Manager – Core Systems",
       initials: "A"
     }),
-    objectives: ["module1", "module3", "module7"],
+    objectives: ["module1"],
     text:
-      "Welcome to NovaTech Logistics. The board has hired you as the new Chief Information Officer (CIO) to modernize systems and improve performance. Alex, your Information Technology (IT) Manager, has scheduled an urgent meeting about the company's aging order management platform.",
+      "Welcome to TriceraTech Logistics! The board has hired you as the new Chief Information Officer (CIO) to modernize systems and improve performance. Alex, your Ankylosaurus Information Technology (IT) Manager, has scheduled an urgent meeting about the company's aging order management platform.",
     choices: [
       new Choice({
-        text: "Approve an integrated cloud enterprise resource planning (ERP) rollout this year.",
+        text: "Approve an integrated cloud enterprise resource planning (ERP) rollout this year, or we'll be fossils!",
         tags: ["Enterprise applications", "Integration"],
         effects: {
-          profitability: -8,
-          productivity: +10,
-          employeeHappiness: -4,
+          profitability: -14,
+          productivity: +18,
+          employeeHappiness: -7,
           clientHappiness: +7,
-          security: -4,
-          innovation: +10
+          security: 0,
+          innovation: +20
         },
         nextSceneId: "dataAudit",
         endMessage: null
       }),
       new Choice({
-        text: "Stabilize the existing on-premise system and plan gradual upgrades.",
+        text: "Stabilize the existing on-premise system and plan gradual upgrades, slow and steady wins the race.",
         tags: ["Risk reduction", "Incremental change"],
         effects: {
           profitability: +10,
-          productivity: +4,
-          employeeHappiness: +3,
-          clientHappiness: +2,
-          security: +4,
-          innovation: -3
+          productivity: +12,
+          employeeHappiness: +10,
+          clientHappiness: 0,
+          security: +12,
+          innovation: -8
         },
         nextSceneId: "securityAlert",
         endMessage: null
@@ -511,45 +508,45 @@ const scenes = {
     ]
   }),
 
-  // 2) DATA AUDIT FOR ERP
+  // 2) DATA AUDIT FOR ERP (X)
   dataAudit: new Scene({
     id: "dataAudit",
     title: "Data quality before integration",
     quarter: "Q1",
     area: "Integrated Systems",
     employee: new Employee({
-      name: "Alex Chen",
+      name: "Alex Chen (Ankylosaurus)",
       role: "IT Manager – Core Systems",
       initials: "A"
     }),
-    objectives: ["module2", "module7"],
+    objectives: ["module2"],
     text:
-      "Before the enterprise resource planning (ERP) rollout, Alex reports that customer, inventory, and supplier data is inconsistent across departments. If you migrate as-is, the new system may simply automate bad data.",
+      "Before the ERP rollout, Alex reports that customer, inventory, and supplier data is inconsistent across departments. If you migrate now, the new system may simply automate bad data.",
     choices: [
       new Choice({
-        text: "Launch a cross-functional data audit and cleansing project before ERP go-live.",
+        text: "Launch a data audit and cleansing project before the ERP rollout, Data Cleanliness is next to Data Godliness!",
         tags: ["Data quality", "Long-term reliability"],
         effects: {
-          profitability: -7,
-          productivity: -4,
-          employeeHappiness: -2,
-          clientHappiness: +4,
-          security: +6,
-          innovation: +4
+          profitability: -15,
+          productivity: -12,
+          employeeHappiness: -4,
+          clientHappiness: +22,
+          security: +30,
+          innovation: +5
         },
         nextSceneId: "cloudVsOnPrem",
         endMessage: null
       }),
       new Choice({
-        text: "Do minimal clean-up and rely on migration tools to handle mapping and transformation.",
+        text: "Do minimal clean-up and rely on migration tools to handle mapping and transformation, no risk no reward!",
         tags: ["Short-term speed", "Higher risk"],
         effects: {
-          profitability: +12,
+          profitability: +10,
           productivity: +4,
-          employeeHappiness: +1,
+          employeeHappiness: +12,
           clientHappiness: 0,
-          security: -5,
-          innovation: -2
+          security: -35,
+          innovation: +8
         },
         nextSceneId: "cloudVsOnPrem",
         endMessage: null
@@ -557,31 +554,31 @@ const scenes = {
     ]
   }),
 
-  // 3) SECURITY ALERT (LEGACY SYSTEMS)
+  // 3) SECURITY ALERT (LEGACY SYSTEMS) (X)
   securityAlert: new Scene({
     id: "securityAlert",
     title: "Ransomware scare",
     quarter: "Q1",
     area: "Security Sector",
     employee: new Employee({
-      name: "Jordan Singh",
+      name: "Jordan Singh (Stegostaurus)",
       role: "Chief Information Security Officer (CISO)",
       initials: "J"
     }),
-    objectives: ["module4", "module6"],
+    objectives: ["module4"],
     text:
       "Jordan informs you that competitors in your industry have been hit by ransomware attacks. Your legacy infrastructure has known vulnerabilities, and patching could disrupt operations.",
     choices: [
       new Choice({
-        text: "Schedule an immediate security hardening window with partial, scheduled downtime.",
+        text: "Schedule an immediate security hardening window with partial, scheduled downtime. ",
         tags: ["Security-first", "Risk mitigation"],
         effects: {
-          profitability: -7,
-          productivity: -6,
-          employeeHappiness: -2,
-          clientHappiness: -4,
-          security: +18,
-          innovation: +1
+          profitability: -12,
+          productivity: -8,
+          employeeHappiness: -10,
+          clientHappiness: -10,
+          security: +40,
+          innovation: +15
         },
         nextSceneId: "incidentResponse",
         endMessage: null
@@ -590,11 +587,11 @@ const scenes = {
         text: "Delay major security work and rely on backups while you monitor threats.",
         tags: ["Business continuity", "Higher risk"],
         effects: {
-          profitability: +8,
-          productivity: +3,
-          employeeHappiness: +1,
-          clientHappiness: +2,
-          security: -14,
+          profitability: +5,
+          productivity: +20,
+          employeeHappiness: +20,
+          clientHappiness: -20,
+          security: -50,
           innovation: 0
         },
         nextSceneId: "incidentResponse",
@@ -603,44 +600,44 @@ const scenes = {
     ]
   }),
 
-  // 4) CLOUD VS ON-PREMISE ARCHITECTURE
+  // 4) CLOUD VS ON-PREMISE ARCHITECTURE (X)
   cloudVsOnPrem: new Scene({
     id: "cloudVsOnPrem",
     title: "Cloud or hybrid architecture?",
     quarter: "Q2",
     area: "Strategy Zone",
     employee: new Employee({
-      name: "Alex Chen",
+      name: "Alex Chen (Ankylosaurus)",
       role: "IT Manager – Core Systems",
       initials: "A"
     }),
-    objectives: ["module3", "module5"],
+    objectives: ["module5"],
     text:
-      "Alex presents infrastructure options for the new enterprise resource planning (ERP) platform. You can move fully to a cloud-based solution or deploy a hybrid model with some components on-premise.",
+      "Alex presents infrastructure options for the ERP platform. You can move fully to a cloud-based solution or deploy a hybrid model with some components on-site, some in the cloud.",
     choices: [
       new Choice({
-        text: "Adopt a fully cloud-based ERP solution with managed services.",
+        text: "Adopt a fully cloud-based ERP solution with managed services, so it's not just my head up there.",
         tags: ["Scalability", "Vendor dependency"],
         effects: {
-          profitability: +6,
-          productivity: +6,
-          employeeHappiness: +2,
-          clientHappiness: +4,
+          profitability: +15,
+          productivity: +20,
+          employeeHappiness: +27,
+          clientHappiness: +44,
           security: -4,
-          innovation: +6
+          innovation: +60
         },
         nextSceneId: "changeManagement",
         endMessage: null
       }),
       new Choice({
-        text: "Deploy a hybrid model with critical data and services kept on-premise.",
+        text: "Deploy a hybrid model with critical data and services kept on-premise, because the best offense is a good defense.",
         tags: ["Control", "Balanced approach"],
         effects: {
-          profitability: +3,
-          productivity: +3,
-          employeeHappiness: +1,
-          clientHappiness: +3,
-          security: +5,
+          profitability: -10,
+          productivity: -8,
+          employeeHappiness: -30,
+          clientHappiness: +15,
+          security: +50,
           innovation: +2
         },
         nextSceneId: "changeManagement",
@@ -649,29 +646,29 @@ const scenes = {
     ]
   }),
 
-  // 5) INCIDENT RESPONSE APPROACH
+  // 5) INCIDENT RESPONSE APPROACH (X)
   incidentResponse: new Scene({
     id: "incidentResponse",
     title: "Incident response strategy",
     quarter: "Q2",
     area: "Security Sector",
     employee: new Employee({
-      name: "Jordan Singh",
+      name: "Jordan Singh (Stegostaurus)",
       role: "Chief Information Security Officer (CISO)",
       initials: "J"
     }),
-    objectives: ["module4", "module6"],
+    objectives: ["module4"],
     text:
       "Shortly after the initial alerts, your monitoring system flags suspicious activity that might be a failed phishing attempt. Jordan asks how aggressive you want the incident response to be.",
     choices: [
       new Choice({
-        text: "Run a full incident response, notify stakeholders, and conduct a formal post-incident review.",
+        text: "Run a full incident response, notify stakeholders, and conduct a formal post-incident review. Honesty is the best policy.",
         tags: ["Transparency", "Governance"],
         effects: {
           profitability: -10,
-          productivity: -3,
-          employeeHappiness: +1,
-          clientHappiness: -1,
+          productivity: -10,
+          employeeHappiness: -65,
+          clientHappiness: -20,
           security: +15,
           innovation: +1
         },
@@ -679,14 +676,14 @@ const scenes = {
         endMessage: null
       }),
       new Choice({
-        text: "Quietly remediate, avoid broad communication, and treat it as a minor event.",
+        text: "Quietly remediate, avoid broad communication, and treat it as a minor event. Minimize and hope it goes away.",
         tags: ["Minimal disruption", "Reputational risk"],
         effects: {
           profitability: +10,
-          productivity: -1,
-          employeeHappiness: -2,
-          clientHappiness: +1,
-          security: -25,
+          productivity: +5,
+          employeeHappiness: +2,
+          clientHappiness: +10,
+          security: -11,
           innovation: 0
         },
         nextSceneId: "changeManagement",
@@ -695,46 +692,46 @@ const scenes = {
     ]
   }),
 
-  // 6) CHANGE MANAGEMENT
+  // 6) CHANGE MANAGEMENT (X)
   changeManagement: new Scene({
     id: "changeManagement",
     title: "Change management pushback",
     quarter: "Q2",
     area: "Integrated Systems",
     employee: new Employee({
-      name: "Maria Lopez",
+      name: "Maria Lopez (T-rex)",
       role: "Human Resources (HR) Director",
       initials: "M"
     }),
-    objectives: ["module2", "module4", "module7"],
+    objectives: ["module2", "module4"],
     text:
-      "Maria explains that employees feel anxious about the new enterprise resource planning (ERP) implementation. Training time will pull them away from daily work, and some fear automation may eliminate roles.",
+      "Maria explains that employees feel anxious about the new ERP rollout. Training time will pull them away from daily work, and some fear automation may eliminate roles.",
     choices: [
       new Choice({
         text:
-          "Invest heavily in training and communication, even if productivity dips short-term.",
+          "Invest heavily in training and communication, even if productivity dips short-term. You get training, and you get training, Everyone gets training!",
         tags: ["People-first", "Long-term value"],
         effects: {
           profitability: -12,
-          productivity: -5,
-          employeeHappiness: +15,
-          clientHappiness: +5,
+          productivity: -25,
+          employeeHappiness: +35,
+          clientHappiness: +20,
           security: +2,
-          innovation: +8
+          innovation: +18
         },
         nextSceneId: "vendorLockIn",
         endMessage: null
       }),
       new Choice({
-        text: "Limit training to critical users to protect short-term performance.",
+        text: "Limit training to critical users to protect short-term performance. Only train those who need it.",
         tags: ["Short-term results", "Cost control"],
         effects: {
-          profitability: +14,
-          productivity: +6,
-          employeeHappiness: -10,
+          profitability: +25,
+          productivity: +12,
+          employeeHappiness: -15,
           clientHappiness: 0,
           security: 0,
-          innovation: -3
+          innovation: -10
         },
         nextSceneId: "vendorLockIn",
         endMessage: null
@@ -742,45 +739,45 @@ const scenes = {
     ]
   }),
 
-  // 7) VENDOR LOCK-IN VS FLEXIBILITY
+  // 7) VENDOR LOCK-IN VS FLEXIBILITY 
   vendorLockIn: new Scene({
     id: "vendorLockIn",
     title: "Vendor strategy and lock-in risk",
     quarter: "Q3",
     area: "Strategy Zone",
     employee: new Employee({
-      name: "Alex Chen",
+      name: "Alex Chen (Ankylosaurus)",
       role: "IT Manager – Core Systems",
       initials: "A"
     }),
-    objectives: ["module3", "module5", "module7"],
+    objectives: ["module5"],
     text:
-      "Your enterprise resource planning (ERP) vendor offers a large discount if you sign a seven-year exclusive contract. Alternatively, you can maintain a more modular, multi-vendor architecture at a higher cost.",
+      "Your ERP vendor offers a large discount if you sign a seven-year exclusive contract. Alternatively, you can maintain a more modular, multi-vendor architecture at a higher cost.",
     choices: [
       new Choice({
-        text: "Sign the long-term exclusive contract to secure discounts and vendor services.",
+        text: "Sign the long-term exclusive contract to secure discounts and vendor services. A dance with th",
         tags: ["Cost savings", "Higher dependency"],
         effects: {
-          profitability: +20,
-          productivity: +4,
-          employeeHappiness: +1,
-          clientHappiness: +3,
+          profitability: +40,
+          productivity: +15,
+          employeeHappiness: -5,
+          clientHappiness: 0,
           security: -6,
-          innovation: -6
+          innovation: -11
         },
         nextSceneId: "shadowIT",
         endMessage: null
       }),
       new Choice({
-        text: "Keep a modular, multi-vendor strategy even if licensing costs are higher.",
+        text: "Keep a modular, multi-vendor strategy even if licensing costs are higher. Freedom comes at a cost.",
         tags: ["Flexibility", "Resilience"],
         effects: {
           profitability: -13,
           productivity: +2,
-          employeeHappiness: 0,
-          clientHappiness: +2,
-          security: 0,
-          innovation: +6
+          employeeHappiness: +18,
+          clientHappiness: +4,
+          security: +20,
+          innovation: +23
         },
         nextSceneId: "shadowIT",
         endMessage: null
@@ -795,11 +792,11 @@ const scenes = {
     quarter: "Q3",
     area: "Integrated Systems",
     employee: new Employee({
-      name: "Maria Lopez",
+      name: "Maria Lopez (T-rex)",
       role: "Human Resources (HR) Director",
       initials: "M"
     }),
-    objectives: ["module2", "module4", "module6", "module7"],
+    objectives: ["module2", "module4"],
     text:
       "Several departments have adopted their own Software as a Service (SaaS) tools for task tracking and file sharing, outside the official enterprise resource planning (ERP) environment. This “shadow IT” makes some teams more productive but raises security and integration concerns.",
     choices: [
@@ -807,12 +804,12 @@ const scenes = {
         text: "Shut down unsupported tools and enforce a strict standard toolset.",
         tags: ["Standardization", "Stronger control"],
         effects: {
-          profitability: -8,
-          productivity: -3,
+          profitability: -10,
+          productivity: -5,
           employeeHappiness: -8,
           clientHappiness: 0,
-          security: +10,
-          innovation: -4
+          security: +31,
+          innovation: -13
         },
         nextSceneId: "aiProposal",
         endMessage: null
@@ -822,12 +819,12 @@ const scenes = {
           "Assess popular tools and bring the best of them into the official portfolio with proper governance.",
         tags: ["Pragmatic", "Collaborative"],
         effects: {
-          profitability: +5,
-          productivity: +4,
-          employeeHappiness: +6,
-          clientHappiness: +2,
-          security: +6,
-          innovation: +5
+          profitability: +28,
+          productivity: +28,
+          employeeHappiness: +33,
+          clientHappiness: +15,
+          security: -8,
+          innovation: +29
         },
         nextSceneId: "aiProposal",
         endMessage: null
@@ -835,18 +832,18 @@ const scenes = {
     ]
   }),
 
-  // 9) AI PROPOSAL
+  // 9) AI PROPOSAL (X)
   aiProposal: new Scene({
     id: "aiProposal",
     title: "Artificial Intelligence (AI) for decision support",
     quarter: "Q4",
     area: "AI Arena",
     employee: new Employee({
-      name: "Priya Patel",
+      name: "Priya Patel (Pterodactyl)",
       role: "Data and Analytics Lead",
       initials: "P"
     }),
-    objectives: ["module3", "module5", "module8"],
+    objectives: ["module5", "module8"],
     text:
       "Priya proposes a pilot Artificial Intelligence (AI) decision-support system to predict late shipments and recommend interventions. It requires clean integrated data and raises questions about transparency and bias.",
     choices: [
@@ -854,12 +851,12 @@ const scenes = {
         text: "Approve the AI pilot with strong governance and explainable models.",
         tags: ["AI & ethics", "Strategic advantage"],
         effects: {
-          profitability: +8,
+          profitability: +18,
           productivity: +8,
           employeeHappiness: +3,
-          clientHappiness: +9,
-          security: -2,
-          innovation: +12
+          clientHappiness: +45,
+          security: -13,
+          innovation: +26
         },
         nextSceneId: "knowledgeProgram",
         endMessage: null
@@ -868,12 +865,12 @@ const scenes = {
         text: "Delay AI and focus on improving manual analytics and reporting.",
         tags: ["Conservative", "Operational focus"],
         effects: {
-          profitability: -2,
+          profitability: -3,
           productivity: +3,
-          employeeHappiness: +1,
-          clientHappiness: +3,
-          security: +12,
-          innovation: -5
+          employeeHappiness: 0,
+          clientHappiness: -12,
+          security: +82,
+          innovation: -8
         },
         nextSceneId: "knowledgeProgram",
         endMessage: null
@@ -888,45 +885,45 @@ const scenes = {
     quarter: "Q4",
     area: "AI Arena",
     employee: new Employee({
-      name: "Priya Patel",
+      name: "Priya Patel (Pterodactyl)",
       role: "Data and Analytics Lead",
       initials: "P"
     }),
     objectives: ["module1", "module2", "module8"],
     text:
-      "After a year of change, NovaTech Logistics has new systems, processes, and data. Priya asks whether you want to formalize a knowledge management program to capture insights, decisions, and models for future improvement.",
+      "After a year of change, TriceraTech Logistics has new systems, processes, and data. Priya asks whether you want to formalize a knowledge management program to capture insights, decisions, and models for future improvement.",
     choices: [
       new Choice({
         text:
           "Create a formal knowledge management program with a centralized portal and clear ownership.",
         tags: ["Organizational learning", "Continuous improvement"],
         effects: {
-          profitability: +2,
-          productivity: +5,
-          employeeHappiness: +4,
-          clientHappiness: +4,
-          security: +3,
+          profitability: +13,
+          productivity: +9,
+          employeeHappiness: +16,
+          clientHappiness: +6,
+          security: +10,
           innovation: +5
         },
         nextSceneId: null,
         endMessage:
-          "You consolidate NovaTech Logistics into a learning organization. Knowledge from projects, analytics, and Artificial Intelligence (AI) pilots is captured and reused. Performance, morale, and innovation all trend upward, and the board sees you as a strategic digital leader."
+          "You consolidate TriceraTech Logistics into a learning organization. Knowledge from projects, analytics, and Artificial Intelligence (AI) pilots is captured and reused. Performance, morale, and innovation all trend upward, and the board sees you as a strategic digital leader."
       }),
       new Choice({
         text:
           "Leave knowledge in email, chat, and informal documents without a formal program.",
         tags: ["Low effort", "Missed opportunity"],
         effects: {
-          profitability: -5,
-          productivity: -12,
-          employeeHappiness: -2,
-          clientHappiness: -2,
-          security: -100,
-          innovation: -4
+          profitability: -0,
+          productivity: -0,
+          employeeHappiness: -0,
+          clientHappiness: -0,
+          security: -100000000,
+          innovation: -0
         },
         nextSceneId: null,
         endMessage:
-          "Projects deliver some benefits, but lessons are often lost when people move roles or leave the company. Analytics and Artificial Intelligence (AI) initiatives remain isolated, and NovaTech Logistics struggles to turn experience into a repeatable competitive advantage."
+          "Projects deliver some benefits, but lessons are often lost when people move roles or leave the company. Analytics and Artificial Intelligence (AI) initiatives remain isolated, and TriceraTech Logistics struggles to turn experience into a repeatable competitive advantage."
       })
     ]
   })
